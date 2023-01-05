@@ -5,15 +5,10 @@ p {
 }
 
 
-html{
-  width: 100%;
-}
-
 body {
   margin: 0;
   background-image: url("images/ardoise.jpg");
   width: 100%;
-  /*font-size: 0;/ /*sinon il y a un espace entre les div*/
 }
 
 .left-section {
@@ -31,12 +26,15 @@ body {
 }
 
 .header {
+  position: fixed;
+  top: 0;
   height: 100px;
   width: 100%;
   background-color : rgb(32, 32, 32);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  z-index: 100;
 }
 
 .olipizza-logo {
@@ -78,32 +76,47 @@ body {
   opacity: 0.8;
  }
 
-.partie1{
-  background-color: pink;
-  font-size: 0;
+
+.content{
+  margin-top: 100px;
 }
-.partie1child{
+.partie1{
+  background-color:black;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-
-}
-.pizzafour{
   height: 800px;
 }
+.txt{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Oswald";
+  color: rgb(216, 216, 216);
+  font-size: 50px;
+  vertical-align: middle;
+}
+
+.pizzafour{
+  height: 100%;
+  opacity: 0.5;
+}
 @media (max-width: 1230px){
-  .pizzafour{
+  .partie1{
     height: 550px;
   }
 }
 
 
 .partie2{
-  height: 600px;
+  height: 500px;
   /*background-color: rgb(32, 32, 32);*/
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 60px;
 }
 .p2gauche{
   display: flex;
@@ -112,21 +125,33 @@ body {
   flex: 1;
 }
 .pizza{
-  width: 80%;
+  width: 60%;
+  margin-left: 250px;
 }
 .p2droite{
   display: flex;
   align-items: center;
   justify-content: center;
   flex: 1;
+  min-height: 100%;
 }
 .desc-pizza{
   font-family: "Oswald";
   color: rgb(216, 216, 216);
+  max-width: 50%;
+  margin-right: 250px;
 }
+@media (max-width: 1230px){
+  .pizza{
+    margin-left: 0px;
+  }
+  .desc-pizza{
+    margin-right: 0px;
+  }
+  }
 
 .partie3{
-  height: 600px;
+  height: 500px;
   /*background-color: rgb(32, 32, 32);*/
   display: flex;
   align-items: center;
@@ -140,9 +165,9 @@ body {
   flex: 1;
 }
 .ingredients{
-  width: 80%;
+  width: 60%;
+  margin-right: 250px;
 }
-
 .p3gauche{
   display: flex;
   align-items: center;
@@ -152,8 +177,18 @@ body {
 .desc-ingredients{
   font-family: "Oswald";
   color: rgb(216, 216, 216);
+  max-width: 50%;
+  margin-left: 250px;
 }
 
+@media (max-width: 1230px){
+  .desc-ingredients{
+    margin-left: 0px;
+  }
+  .ingredients{
+    margin-right: 0px;
+  }
+}
 
 .ligne-orange{
   height: 5px;
