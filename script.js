@@ -12,9 +12,9 @@ function ajouterFooter(){
     let footergauche = document.createElement('div');
     let footermilieu = document.createElement('div');
     let footerdroite = document.createElement('div');
-    let content = document.getElementById('content');
+    let body = document.body;
     /* On ajoute le footer */
-    content.append(footer);
+    body.append(footer);
     footer.classList.add('footer');
     /* On ajoute le sous-footer gauche */
     footer.appendChild(footergauche);
@@ -42,6 +42,7 @@ function ajouterHeader(){
     let olipizzaLogo = document.createElement('img');
     /* On donne sa classe au header et on le fait apparaître */
     header.classList.add('header');
+    header.id = 'header';
     body.appendChild(header);
     /* On ajoute les div */
     leftSection = ajouterChildDiv(header, 'left-section');
@@ -82,19 +83,32 @@ function wrap(el, wrapper) {
 
 /* Actions*/
 
-/* Animations texte : index.html */
-gsap.from('.txt', {duration: 1, y: '-100%', ease: 'power1', opacity: 0});
-gsap.from('.txt2', {duration: 1, y: '-50%', ease: 'power1', opacity: 0, delay: 1});
+/* Script*/
+ajouterHeader();
+ajouterFooter();
 
 /* Animations texte : apropos.html */
 gsap.from('.txt-apropos', {duration: 1, y: '-100%', ease: 'power1', opacity: 0});
 gsap.from('.txtapropos', {duration: 1, y: '-15%', ease: 'power1', opacity: 0, delay: 1});
 gsap.from('.infos-pratiques', {duration: 1, y: '-100%', ease: 'power1', opacity: 0, delay: 1.5});
 
-/* Script*/
-ajouterHeader();
-ajouterFooter();
+/* Animations texte : index.html */
+gsap.from('.txt', {duration: 1, y: '-100%', ease: 'power1', opacity: 0});
+gsap.from('.txt2', {duration: 1, y: '-50%', ease: 'power1', opacity: 0, delay: 1});
 
+/* Animation header */
+let header = document.getElementById('header');
+
+let prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+  let currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) { //si on monte
+    header.style.backgroundColor = "rgba(32, 32, 32, 0)";
+  } else { 
+    header.style.backgroundColor = "rgba(32, 32, 32, 0.8)";
+  }
+  prevScrollpos = currentScrollPos;
+}
 
 
 
