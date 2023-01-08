@@ -1,5 +1,5 @@
 
-/* Fonctions */
+//////////////////////////////////////////////////////////////////////////////////// Fonctions ///////////////////////////////////////////////////////////////
 function ajouterChildParagraphe(parent, classParagraphe, texteParagraphe){
     let p = document.createElement('p');
     parent.appendChild(p)
@@ -8,32 +8,49 @@ function ajouterChildParagraphe(parent, classParagraphe, texteParagraphe){
 }
 
 function ajouterFooter(){
-    let footer = document.createElement('footer');
-    let footergauche = document.createElement('div');
-    let footermilieu = document.createElement('div');
-    let footerdroite = document.createElement('div');
-    let body = document.body;
-    /* On ajoute le footer */
-    body.append(footer);
-    footer.classList.add('footer');
-    /* On ajoute le sous-footer gauche */
-    footer.appendChild(footergauche);
-    footergauche.classList.add('footer-gauche');
-    /* On ajoute les paragraphes du sous-footer gauche */
-    ajouterChildParagraphe(footergauche, 'coordonnees', 'Oli Pizza');
-    ajouterChildParagraphe(footergauche, 'coordonnees', '13 rue Jean Abraham Poupart');
-    ajouterChildParagraphe(footergauche, 'coordonnees', '08300 Neuflize');
-    ajouterChildParagraphe(footergauche, 'coordonnees', 'Tél : 03 24 72 74 10');
-    /* On ajoute le sous-footer milieu */
-    footer.appendChild(footermilieu);
-    footermilieu.classList.add('footer-milieu');
-    /* On ajoute les paragraphes du sous-footer milieu */
-    ajouterChildParagraphe(footermilieu, 'nom-site', 'www.oli-pizza.fr');
-    /* On ajoute le sous-footer droite */
-    footer.appendChild(footerdroite);
-    footerdroite.classList.add('footer-gauche');
-    /* On ajoute les paragraphes du sous-footer droite */
-    ajouterChildParagraphe(footerdroite, 'horaires', 'Ouvert du lundi??? au vendredi???');
+  let footer = document.createElement('footer');
+  let footergauche = document.createElement('div');
+  let footermilieu = document.createElement('div');
+  let footerdroite = document.createElement('div');
+  let body = document.body;
+  /* On ajoute le footer */
+  body.append(footer);
+  footer.classList.add('footer');
+  /* On ajoute le sous-footer gauche */
+  footer.appendChild(footergauche);
+  footergauche.classList.add('footer-gauche');
+  /* On ajoute les paragraphes du sous-footer gauche */
+  ajouterChildParagraphe(footergauche, 'coordonnees', 'Oli Pizza');
+  ajouterChildParagraphe(footergauche, 'coordonnees', '13 rue Jean Abraham Poupart');
+  ajouterChildParagraphe(footergauche, 'coordonnees', '08300 Neuflize');
+  ajouterChildParagraphe(footergauche, 'coordonnees', 'Tél : 03 24 72 74 10');
+  /* On ajoute le sous-footer milieu */
+  footer.appendChild(footermilieu);
+  footermilieu.classList.add('footer-milieu');
+  /* On ajoute les enfants du sous-footer milieu */
+  let footermilieuTxt = ajouterChildDiv(footermilieu, 'footermilieu-txt');
+  let footermilieuImages = ajouterChildDiv(footermilieu, 'footermilieu-images');
+  /* On ajoute le texte du sous-footer milieu */
+  ajouterChildParagraphe(footermilieuTxt, 'nom-site', 'www.oli-pizza.fr');
+  /* On fait apparaître les images-link */
+  ajouterChildImgLink(footermilieuImages, 'socialFooterImage', "images/facebook-icon.png", 'https://www.facebook.com/Olipizzaneuflize');
+  ajouterChildImgLink(footermilieuImages, 'socialFooterImage', "images/instagram-icon.png", 'https://www.instagram.com/olipizzaneuflize/?hl=fr');
+  /* On ajoute le sous-footer droite */
+  footer.appendChild(footerdroite);
+  footerdroite.classList.add('footer-gauche');
+  /* On ajoute les paragraphes du sous-footer droite */
+  ajouterChildParagraphe(footerdroite, 'horaires', 'Ouvert du lundi??? au vendredi???');
+}
+
+function ajouterChildImgLink(parent, imgClass, imgSrc, link){
+  let image = document.createElement('img');
+  parent.appendChild(image);
+  image.classList.add(imgClass);
+  image.src = imgSrc;
+  let imageLink = document.createElement('a'); /* On créé un lien pour "entourer" l'image" */
+  imageLink.href = link;
+  imageLink.target = "_blank";
+  wrap(image, imageLink);
 }
 
 function ajouterHeader(){
@@ -57,7 +74,7 @@ function ajouterHeader(){
     link.href = 'index.html';
     wrap(olipizzaLogo, link);
     /* On créé les boutons */
-    ajouterChildLink(sections, 'notre-carte', '', 'notre carte');
+    ajouterChildLink(sections, 'notre-carte', 'carte.html', 'notre carte');
     ajouterChildLink(sections, 'apropos', 'apropos.html', 'à propos de nous');
 }
 
@@ -81,7 +98,7 @@ function wrap(el, wrapper) {
     wrapper.appendChild(el);
 }
 
-/* Actions*/
+//////////////////////////////////////////////////////////////////////////////////// Actions ///////////////////////////////////////////////////////////////
 
 /* Script*/
 ajouterHeader();

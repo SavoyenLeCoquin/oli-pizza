@@ -1,0 +1,132 @@
+.partie1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+}
+
+
+.partie1Txt{
+    color: white;
+    font-family: "Oswald";
+    font-weight: bold;
+    font-size: 50px;
+    white-space: nowrap;
+}
+
+.partie2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.partie2Grid{
+    min-height: 600px;
+    display: grid;
+    grid-template-columns: repeat(3, 25vw);
+    grid-auto-rows: 600px;
+    grid-gap: 5px;
+}
+
+@media (max-width: 1300px){
+    .partie2Grid{
+        min-height: 600px;
+        display: grid;
+        grid-template-columns: repeat(1, 400px);
+        grid-auto-rows: 600px;
+        grid-gap: 5px;
+    }
+}
+
+.pizzaCase{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: solid 5px rgb(214, 121, 0);
+    max-height: 100%;
+    max-height: 100%;
+
+    color: white;
+    font-family: "Oswald";
+    font-size: 20px;
+}
+.pizzaCaseImgContainer{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex: 2;
+}
+.pizzaGridImage{
+    max-width: 100%;
+    max-height: 100%;
+}
+.pizzaCaseTxt{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    flex: 1;
+}
+
+.caseTxtTitre{
+    color: white;
+    font-family: "Oswald";
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    justify-content: center;
+}
+
+.caseTxtDesc{
+    color: white;
+    font-family: "Oswald";
+    font-size: 20px;
+    margin-bottom: 10px;
+    justify-content: center;
+    flex: 1;
+}
+
+.partie3Children{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+    margin-top: 100px;
+}
+.partie3Gauche{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: "Oswald";
+    font-weight: bold;
+    font-size: 50px;
+    white-space: nowrap;
+    flex: 1;
+}
+
+.partie3Droite{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.descPizzaMois{
+    color: white;
+    font-family: "Oswald";
+    font-weight: bold;
+    font-size: 30px;
+    white-space: nowrap;
+    margin-top: 20px;
+}
+
+
