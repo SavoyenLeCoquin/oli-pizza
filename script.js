@@ -98,14 +98,14 @@ gsap.from('.txt2', {duration: 1, y: '-50%', ease: 'power1', opacity: 0, delay: 1
 
 /* Animation header */
 let header = document.getElementById('header');
-
 let prevScrollpos = window.pageYOffset;
 window.onscroll = function() {
   let currentScrollPos = window.pageYOffset;
-  if (prevScrollpos > currentScrollPos) { //si on monte
-    header.style.backgroundColor = "rgba(32, 32, 32, 0)";
-  } else { 
+  if(window.scrollY!=0){
     header.style.backgroundColor = "rgba(32, 32, 32, 0.8)";
+  }
+  else { 
+    header.style.backgroundColor = "rgba(32, 32, 32, 0)";
   }
   prevScrollpos = currentScrollPos;
 }

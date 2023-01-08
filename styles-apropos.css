@@ -74,5 +74,43 @@
   flex: 1;
   height: 100%;
   padding-left: 100px;
-  padding-right: 100px 
+  padding-right: 100px;
+}
+
+.p3droiteh{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom : 50px;
+}
+
+.p3droiteb{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.p3droiteb-txt{
+  margin-bottom: 10px;
+}
+
+.socialnetwork{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.socialnetwork-icon{
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+  margin-left: 10px;
+  transition: opacity 0.25s;
+}
+
+.socialnetwork-icon:hover{
+  opacity: 0.8;
 }
