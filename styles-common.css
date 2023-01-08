@@ -55,7 +55,7 @@ html{
 }
   
 .sections {
-    width: 300px;
+    width: 400px;
     margin-right: 100px;
     display: flex;
     align-items: center;
@@ -67,27 +67,14 @@ html{
 .notre-carte {
     margin-left: 15px;
     margin-right: 15px;
-    color : rgb(168, 168, 168);
+    color : rgb(221, 221, 221);
     transition: opacity 0.15s;
     cursor: pointer;
     text-decoration: none;
+    font-size: 20px;
 }
 
 .notre-carte:hover {
-    opacity: 0.8;
-}
-  
-.apropos {
-   /* background-color: pink;*/
-    margin-left: 15px;
-    margin-right: 15px;
-    color : rgb(168, 168, 168);
-    transition: opacity 0.15s;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.apropos:hover {
     opacity: 0.8;
 }
 

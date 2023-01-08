@@ -75,7 +75,7 @@ function ajouterHeader(){
     wrap(olipizzaLogo, link);
     /* On créé les boutons */
     ajouterChildLink(sections, 'notre-carte', 'carte.html', 'notre carte');
-    ajouterChildLink(sections, 'apropos', 'apropos.html', 'à propos de nous');
+    ajouterChildLink(sections, 'notre-carte', 'apropos.html', 'à propos de nous');
 }
 
 function ajouterChildDiv(parent, classDiv){
